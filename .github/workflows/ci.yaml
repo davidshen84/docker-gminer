@@ -1,0 +1,28 @@
+name: Build docker-gminer
+on:
+  push:
+permissions:
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+    - uses: actions/checkout@v2
+    - uses: docker/build-push-action@v2
+      with:
+        context: ./
+        push: true
+        file: ./Dockerfile
+        build-args: |
+          cudaVersion=11.6.2
+          ubuntuVersion=20.04
+          gminerVersion=3.03
+          gminerFilename=gminer_3_03_linux64.tar.xz
+        tags: |
+          ghcr.io/davidshen84/gminer:3-c11.6

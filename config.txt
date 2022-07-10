@@ -1,0 +1,17 @@
+[common]
+algo=kawpow
+templimit=90
+color=1 ; enable color output
+watchdog=1
+pec=1 ; enable power efficiency calculator
+# api=10555 ; enable API, to view statistics navigate to http://localhost:10555 in your browser
+
+# Main pool
+[server]
+host=gulf.moneroocean.stream
+port=20128
+ssl=1
+proto=stratum
+user=8BjurXyveWHGZgPdLqxukUd7aDWdkWqqc1PoSs8oK9idejw8W57aqS14qkL4TNEgsM7Qh5zR5QtAoXAqkjx7e71MMab69ko
+pass=rtx1050~kawpow
+opencl=0
