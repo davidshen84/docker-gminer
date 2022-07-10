@@ -7,5 +7,5 @@
 - Run docker
 
 ```
-nvidia-docker run --rm -it -v /path/to/config.txt:config.txt gminer
+nvidia-docker run --rm -it -v /path/to/config.txt:/gminer/config.txt gminer
 ```
